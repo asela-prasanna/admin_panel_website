@@ -3,10 +3,25 @@ import Sidebar from "../../components/sidebar/Sidebar"
 import Navbar from "../../components/navbar/Navbar" 
 import DriveFolderUploadIcon from '@mui/icons-material/DriveFolderUpload';
 import { useState } from "react";
+import { addDoc, serverTimestamp, collection} from "firebase/firestore"; 
+import { db } from "../../firebase";
 
 
 const New = ({inputs,title}) => {
   const [file, setFile] = useState("");
+
+  const handleAdd = async(e) => {
+    e.preventDefault()
+    const res = await addDoc(collection(db, "cities"), {
+      name: "Los Angeles",
+      state: "CA",
+      country: "USA",
+      timeStamp: serverTimestamp()
+    });
+
+    console.log(res.id)
+    
+  }
 
 
   return (
@@ -27,7 +42,7 @@ const New = ({inputs,title}) => {
               />
             </div>
             <div className="right">
-              <form>
+              <form onSubmit={handleAdd}>
                 <div className="formInput">
                   <label htmlFor="file">
                     Image : <DriveFolderUploadIcon className="icon" />
@@ -44,7 +59,7 @@ const New = ({inputs,title}) => {
                   </div>
                 ))}
 
-                <button>Send</button>
+                <button type="submit">Send</button>
               </form>
             </div>
 
