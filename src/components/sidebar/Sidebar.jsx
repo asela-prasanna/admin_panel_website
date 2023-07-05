@@ -15,6 +15,8 @@ import InputOutlinedIcon from '@mui/icons-material/InputOutlined';
 import {Link} from "react-router-dom";
 import { DarkModeContext } from '../../context/darkMOdeContext';
 import { useContext } from 'react';
+import image from '../../image/flash6.jpg';
+
 
 const Sidebar = () => {
   const {dispatch} = useContext(DarkModeContext);
@@ -24,7 +26,7 @@ const Sidebar = () => {
     <div className='sidebar'>
       <div className='top'>
         <Link to="/" style={{textDecoration:"none"}}>
-        <span className='logo'>RIDEPING</span>
+        <img src={image} alt="Logo" className="image-style"/>
         </Link>
       </div>
       <hr />

@@ -3,7 +3,7 @@
     flex: 1;
     border-right: 0.5px solid rgb(155, 139, 139);
     min-height: 100vh;
-    background-color: white;
+    background-color: #fda900;
 
     .top{
         height: 50px;
@@ -20,7 +20,7 @@
 
     hr{
         height: 0;
-        border: 0.5px solid rgb(155, 139, 139);
+        border: 0.5px solid rgb(0, 0, 0);
     }
 
     .center{
@@ -33,7 +33,7 @@
         .title{
             font-size: 10px;
             font-weight: bold;
-            color: #999;
+            color: #000000;
             margin-top: 15px;
             margin-bottom: 5px;
         }
@@ -56,12 +56,19 @@
             span{
                 font-size: 13px;
                 font-weight: 600;
-                color: #888;
+                color: #000000;
                 margin-left: 10px;
             }
         }
         }
     }
+
+    .image-style {
+        width: 200px;
+        height: auto;
+      
+    }
+      
 
     .bottom{
         display: flex;
