@@ -4,9 +4,10 @@
     flex: 1;
     padding: 10px;
     -webkit-box-shadow: -2px -5px 18px -6px #000000; 
-    box-shadow: -2px -5px 18px -6px #000000;
+    box-shadow: -2px -5px 18px -6px #ffffff;
     border-radius: 10px;
     height: 100px;
+    background-color: rgb(214, 218, 226);
 
     .left, .right{
         display: flex;
@@ -16,17 +17,19 @@
         .title{
             font-weight: bold;
             font-style: 14px;
-            color: gray;
+            color: rgb(0, 0, 0);
         }
 
         .counter{
             font-style: 28px;
             font-weight: 300;
+            color: rgb(0, 0, 0);
         }
         .link{
             width: max-content;
             font-style: 12px;
-            border-bottom: 1px solid gray;
+            border-bottom: 1px solid rgb(24, 67, 77);
+            color: rgb(0, 0, 0);
         }
 
         .percentage{

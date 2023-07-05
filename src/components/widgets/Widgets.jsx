@@ -22,7 +22,7 @@ const Widgets = ({type}) => {
         data = {
           title: "PASSENGERS",
           isMony: false,
-          link: "See all users",
+          link: "See all Passengers",
           icon: (<Person2OutlinedIcon 
           className="icon" 
           style={{
@@ -37,7 +37,7 @@ const Widgets = ({type}) => {
         data = {
           title: "RIDERS",
           isMony: false,
-          link: "View all orders",
+          link: "View all Riders",
           icon: (<ShoppingCartOutlinedIcon 
           className="icon" 
           style={{
@@ -52,7 +52,7 @@ const Widgets = ({type}) => {
         data = {
           title: "AVAILABLE RIDERS",
           isMony: false,
-          link: "View net earning",
+          link: "View Available Riders",
           icon: (<MonetizationOnOutlinedIcon 
           className="icon"
           style={{
@@ -67,7 +67,7 @@ const Widgets = ({type}) => {
         data = {
           title: "EARNINGS",
           isMony: false,
-          link: "See details",
+          link: "See Earnings",
           icon: (<AccountBalanceWalletOutlinedIcon 
           className="icon"
           style={{
