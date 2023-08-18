@@ -1,18 +1,20 @@
-import { initializeApp } from "firebase/app";
-import { getAuth } from "firebase/auth";
-import { getFirestore } from "firebase/firestore";
-
+import { initializeApp } from 'firebase/app';
+import { getAuth } from 'firebase/auth';
+import { getDatabase } from 'firebase/database';
 
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_FIREBASE_KEY,
-  authDomain: "carpooling-website-d4ec4.firebaseapp.com",
-  projectId: "carpooling-website-d4ec4",
-  storageBucket: "carpooling-website-d4ec4.appspot.com",
-  messagingSenderId: "380661178730",
-  appId: "1:380661178730:web:79b01eca3d0043c1bc8513"
+  authDomain: 'carpooling-mobile-app.firebaseapp.com',
+  databaseURL: 'https://carpooling-mobile-app-default-rtdb.asia-southeast1.firebasedatabase.app',
+  projectId: 'carpooling-mobile-app',
+  storageBucket: 'carpooling-mobile-app.appspot.com',
+  messagingSenderId: '1009356806276',
+  appId: '1:1009356806276:web:8817c7fa74d54a801f8ad1',
+  measurementId: 'G-P2RPQ36GKG',
 };
 
-
 const app = initializeApp(firebaseConfig);
-export const db = getFirestore(app);
-export const auth = getAuth();
+const db = getDatabase(app);
+const auth = getAuth();
+
+export { db, auth };

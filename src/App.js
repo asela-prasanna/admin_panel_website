@@ -38,7 +38,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path='/'>
-        <Route path="login" element={<Login/>} />
+        <Route path="Home" element={<Login/>} />
           <Route index element={<RequireAuth><Home/></RequireAuth>} />
                    <Route path='passengers'>
             <Route index element={<RequireAuth><List/></RequireAuth>}/>

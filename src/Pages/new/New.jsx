@@ -3,7 +3,8 @@ import Sidebar from "../../components/sidebar/Sidebar"
 import Navbar from "../../components/navbar/Navbar" 
 import DriveFolderUploadIcon from '@mui/icons-material/DriveFolderUpload';
 import { useState } from "react";
-import { addDoc, serverTimestamp, collection} from "firebase/firestore"; 
+import { getDatabase, ref, set } from "firebase/database";
+//import { addDoc, serverTimestamp, collection} from "firebase/firestore"; 
 import { db } from "../../firebase";
 
 
@@ -12,14 +13,15 @@ const New = ({inputs,title}) => {
 
   const handleAdd = async(e) => {
     e.preventDefault()
-    const res = await addDoc(collection(db, "cities"), {
-      name: "Los Angeles",
-      state: "CA",
-      country: "USA",
-      timeStamp: serverTimestamp()
-    });
-
-    console.log(res.id)
+    function writeUserData(userId, name, email, imageUrl) {
+      const db = getDatabase();
+      set(ref(db, 'users/' + userId), {
+        username: name,
+        email: email,
+        profile_picture : imageUrl
+      });
+    }  
+    //console.log(res.id)
     
   }
 
