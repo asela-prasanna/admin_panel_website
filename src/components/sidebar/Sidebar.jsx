@@ -1,75 +1,75 @@
-import React from 'react';
-import "./Sidebar.scss"
-import DashboardIcon from '@mui/icons-material/Dashboard';
-import Groups2Icon from '@mui/icons-material/Groups2';
-import PeopleIcon from '@mui/icons-material/People';
-import LocalShippingIcon from '@mui/icons-material/LocalShipping';
-import AccountBoxRoundedIcon from '@mui/icons-material/AccountBoxRounded';
-import LogoutRoundedIcon from '@mui/icons-material/LogoutRounded';
-import SettingsApplicationsOutlinedIcon from '@mui/icons-material/SettingsApplicationsOutlined';
-import NotificationsActiveOutlinedIcon from '@mui/icons-material/NotificationsActiveOutlined';
-import MonetizationOnIcon from '@mui/icons-material/MonetizationOn';
-import LeaderboardIcon from '@mui/icons-material/Leaderboard';
-import LocalHospitalOutlinedIcon from '@mui/icons-material/LocalHospitalOutlined';
-import InputOutlinedIcon from '@mui/icons-material/InputOutlined';
-import {Link} from "react-router-dom";
-import { DarkModeContext } from '../../context/darkMOdeContext';
-import { useContext } from 'react';
-import image from '../../image/flash6.jpg';
-
+import React from "react";
+import "./Sidebar.scss";
+import DashboardIcon from "@mui/icons-material/Dashboard";
+import Groups2Icon from "@mui/icons-material/Groups2";
+import PeopleIcon from "@mui/icons-material/People";
+import LocalShippingIcon from "@mui/icons-material/LocalShipping";
+import AccountBoxRoundedIcon from "@mui/icons-material/AccountBoxRounded";
+import LogoutRoundedIcon from "@mui/icons-material/LogoutRounded";
+import SettingsApplicationsOutlinedIcon from "@mui/icons-material/SettingsApplicationsOutlined";
+import NotificationsActiveOutlinedIcon from "@mui/icons-material/NotificationsActiveOutlined";
+import MonetizationOnIcon from "@mui/icons-material/MonetizationOn";
+import LeaderboardIcon from "@mui/icons-material/Leaderboard";
+import LocalHospitalOutlinedIcon from "@mui/icons-material/LocalHospitalOutlined";
+import InputOutlinedIcon from "@mui/icons-material/InputOutlined";
+import { Link } from "react-router-dom";
+import { DarkModeContext } from "../../context/darkMOdeContext";
+import { useContext } from "react";
+import image from "../../image/flash6.jpg";
 
 const Sidebar = () => {
-  const {dispatch} = useContext(DarkModeContext);
+  const { dispatch } = useContext(DarkModeContext);
 
   return (
-
-    <div className='sidebar'>
-      <div className='top'>
-        <Link to="/" style={{textDecoration:"none"}}>
-        <img src={image} alt="Logo" className="image-style"/>
+    <div className="sidebar">
+      <div className="top">
+        <Link to="/" style={{ textDecoration: "none" }}>
+          <img src={image} alt="Logo" className="image-style" />
         </Link>
       </div>
       <hr />
-      <div className='center'>
+      <div className="center">
         <ul>
-          <p className='title'>MAIN</p>
+          <p className="title">MAIN</p>
           <li>
-            <DashboardIcon/>
+            <DashboardIcon />
             <span>Dashboard</span>
           </li>
-          <p className='title'>LIST</p>
-          <Link to="/passengers" style={{textDecoration:"none"}}>
-          <li>
-          <Groups2Icon/>
-          <span>Passengers</span>
-          </li> 
+          <p className="title">LIST</p>
+          <Link to="/passengers" style={{ textDecoration: "none" }}>
+            <li>
+              <Groups2Icon />
+              <span>Passengers</span>
+            </li>
           </Link>
 
-          <Link to="/riders" style={{textDecoration:"none"}}>
-
-          <li>
-            <PeopleIcon/>
-            <span>Riders</span>
-          </li>
+          <Link to="/riders" style={{ textDecoration: "none" }}>
+            <li>
+              <PeopleIcon />
+              <span>Riders</span>
+            </li>
           </Link>
-          <li>
-            <LocalShippingIcon/>
+          <Link to= "/rideReq" style={{ textDecoration: "none" }}>          <li>
+            <LocalShippingIcon />
             <span>Rides</span>
           </li>
+          </Link>
+        <Link to = "/earnings" style={{textDecoration: "none"}}>
           <li>
             <MonetizationOnIcon />
             <span>Earnings</span>
           </li>
-          <p className='title'>USEFUL</p>
+          </Link>
+          <p className="title">USEFUL</p>
           <li>
-          <LeaderboardIcon />
+            <LeaderboardIcon />
             <span>Status</span>
           </li>
           <li>
-          <NotificationsActiveOutlinedIcon/>
+            <NotificationsActiveOutlinedIcon />
             <span>Notification</span>
           </li>
-          <p className='title'>SERVICES</p>
+          <p className="title">SERVICES</p>
           <li>
             <LocalHospitalOutlinedIcon />
             <span>System health</span>
@@ -79,35 +79,33 @@ const Sidebar = () => {
             <span>Logs</span>
           </li>
           <li>
-            <SettingsApplicationsOutlinedIcon/>
+            <SettingsApplicationsOutlinedIcon />
             <span>Settings</span>
           </li>
-          <p className='title'>USER</p>
+          <p className="title">USER</p>
           <li>
-            <AccountBoxRoundedIcon/>
+            <AccountBoxRoundedIcon />
             <span>Profile</span>
           </li>
           <li>
-            <LogoutRoundedIcon/>
+            <LogoutRoundedIcon />
             <span>Logout</span>
           </li>
         </ul>
       </div>
 
-      <div className='bottom'>
-        <div 
-        className="colorOption" 
-        onClick ={() => dispatch({type: "LIGHT" })}
+      <div className="bottom">
+        <div
+          className="colorOption"
+          onClick={() => dispatch({ type: "LIGHT" })}
         ></div>
-        <div 
-        className="colorOption" 
-        onClick ={() => dispatch({type: "DARK" })}
+        <div
+          className="colorOption"
+          onClick={() => dispatch({ type: "DARK" })}
         ></div>
-        
-        </div>
-        </div>
-    
-  )
-}
+      </div>
+    </div>
+  );
+};
 
-export default Sidebar
+export default Sidebar;

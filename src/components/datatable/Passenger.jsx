@@ -1,10 +1,13 @@
 import "./datatable.scss"
 import React, { useEffect, useState } from 'react';
 import { db } from "../../firebase";
-import { get, onValue, ref } from 'firebase/database';
+import { onValue, ref } from 'firebase/database';
+import Sidebar from "../sidebar/Sidebar";
+import Navbar from "../navbar/Navbar";
+//import { colors } from "@mui/material";
 
 
-const Datatable = () => {
+const Passenger = () => {
 
   const [data,setData] = useState([]);
   const usersRef = ref(db, 'users');
@@ -37,15 +40,20 @@ const Datatable = () => {
   }, []);
 
   return(
-    <div style={{marginTop: "100px"}}>
-      <table className="styled-table">
-        <thead>
+    <>
+    <div className="list">
+      <Sidebar/>
+      <div className="listContainer">
+        <Navbar/>
+    <div className="datatable-container">
+      <table className="datatable">
+        <thead className="datatableTitle">
           <tr>
-            <th style={{textAlign: "center"}}>No.</th>
-            <th style={{textAlign: "center"}}>Name</th>
-            <th style={{textAlign: "center"}}>Email</th>
-            <th style={{textAlign: "center"}}>Phone</th>
-            <th style={{textAlign: "center"}}>Action</th>
+            <th>No.</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Action</th>
           </tr>
         </thead>
         <tbody>
@@ -56,6 +64,9 @@ const Datatable = () => {
                 <td>{data[id].name}</td>
                 <td>{data[id].email}</td>
                 <td>{data[id].phone}</td>
+                <td>
+                  <button className="cellAction viewButton">Edit</button>
+                </td>
               </tr>
             )
           })}
@@ -63,6 +74,9 @@ const Datatable = () => {
       </table>
 
     </div>
+    </div>
+    </div>
+    </>
   );
 
 //   const handleDelete = (id) => {
@@ -103,4 +117,4 @@ const Datatable = () => {
 //     </div>
 //   )
 }
-export default Datatable
+export default Passenger

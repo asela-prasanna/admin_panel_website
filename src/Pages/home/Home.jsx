@@ -14,10 +14,7 @@ const Home = () => {
       <div className="homeContainer">
         <Navbar/>
         <div className="widgets">
-          <Widgets type="passengers"/>
-          <Widgets type="riders"/>
-          <Widgets type="available riders"/>
-          <Widgets type="earnings"/>
+          <Widgets/>
         </div>
         <div className="charts">
           <Featured/>
